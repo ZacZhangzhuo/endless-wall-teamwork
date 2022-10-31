@@ -14,8 +14,6 @@ ROBOT_IP = "192.168.10.10"
 SAFE_ROBOT_ACC = 0.1
 SAFE_ROBOT_VEL = 0.3
 IO = 0 # 0
-
-
 sleep_time = 0.2
 
 def tcp(script):
@@ -46,7 +44,7 @@ def pickup_brick(script,pick_up_plane):
     SAFE_DIST = 150
     
     safe_plane = pick_up_plane.Clone()
-#    safe_plane.Translate(rhinoplane.ZAxis*SAFE_DIST)
+    #safe_plane.Translate(rhinoplane.ZAxis*SAFE_DIST)
     safe_plane.Translate(rg.Vector3d.ZAxis*SAFE_DIST)
     
     ## add to the path: go to the safe plane
@@ -64,8 +62,6 @@ def pickup_brick(script,pick_up_plane):
     # add to the path: go back to the safe_plane
     script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
     planes.append(safe_plane)
-    
-    
     return script, planes
 
 
