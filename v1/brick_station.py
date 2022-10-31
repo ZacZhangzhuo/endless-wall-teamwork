@@ -15,7 +15,7 @@ SAFE_ROBOT_ACC = 0.4
 SAFE_ROBOT_VEL = 1.0
 IO = 0 # 0
 
-
+# picking_planes
 
 
 def tcp(script):
@@ -102,10 +102,21 @@ def send(script):
 
 
 #location of a pick up station
-axisangle = Frame.from_axis_angle_vector([3.293,4.493,-0.175],[413.99,-714.67,-565.70])
+axisangle = Frame.from_axis_angle_vector([677.92,-886.22,-492.38],[3.902,3.225,-1.960])
 rhinoplane = frame_to_rhino(axisangle)
-print rhinoplane
-pick_station = rg.Plane(rhinoplane)#Rotate Plane
+
+pickup_planes = []
+
+for plan in  picking_planes:
+    plan.Transform.PlaneToPlane(pickup_planes[0], plan)
+    pickup_planes.append(rg.Plane(plan))
+
+# print rhinoplane
+# pick_station = rg.Plane(rhinoplane)#Rotate Plane
+
+
+
+#  picking_planes
 
 
 script = ""
@@ -123,12 +134,12 @@ for p in brick_planes:
     robot_planes.append(r_plane)
 
 
-for b_plane in robot_planes:
+for i in range(len(robot_planes)):
     
-    script, p = pickup_brick(script,pick_station)
+    script, p = pickup_brick(script,pickup_planes[i])
     vis_planes.extend(p) #only to visualize the planes
     
-    script, p = place_brick(script,b_plane)
+    script, p = place_brick(script,robot_planes[i])
     vis_planes.extend(p)
 
 
