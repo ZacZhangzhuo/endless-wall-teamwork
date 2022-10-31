@@ -2,6 +2,7 @@
  This is the brick pick and place of UR5 robot group practice, ETH Zurich MAS dfab 2022-23
 
 ## Using the UR robot to lay a brick wall lampshade that changes opacity and shape according to sunlight data
+A lamp that reacts to the sun conditions in someone else's location.
 
 Credits: Brian Po Yen Chen, Carl P-Conquilla, Chenming Jiang, Zac Zhuo Zhang
 
