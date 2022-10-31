@@ -11,12 +11,12 @@ from compas_rhino.conversions import frame_to_rhino
 
 # change these values if needed
 ROBOT_IP = "192.168.10.10"
-SAFE_ROBOT_ACC = 0.4
+SAFE_ROBOT_ACC = 0.6
 SAFE_ROBOT_VEL = 1.0
 IO = 0 # 0
 
-# picking_planes
 
+sleep_time = 0.2
 
 def tcp(script):
     script += ur.set_tcp_by_angles(0.0, 0.0, 80.0, m.radians(0.0), m.radians(180.0),m.radians(0.0))
@@ -46,7 +46,8 @@ def pickup_brick(script,pick_up_plane):
     SAFE_DIST = 150
     
     safe_plane = pick_up_plane.Clone()
-    safe_plane.Translate(rhinoplane.ZAxis*SAFE_DIST)
+#    safe_plane.Translate(rhinoplane.ZAxis*SAFE_DIST)
+    safe_plane.Translate(rg.Vector3d.ZAxis*SAFE_DIST)
     
     ## add to the path: go to the safe plane
     script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
@@ -58,7 +59,7 @@ def pickup_brick(script,pick_up_plane):
     
     ## add to the path: turn on the vacuum and wait 1 sec.
     script += ur.set_digital_out(IO,True)
-    script += ur.sleep(1)
+    script += ur.sleep(sleep_time)
 
     # add to the path: go back to the safe_plane
     script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
@@ -86,8 +87,8 @@ def place_brick(script, place_plane):
     
     ## add to the path: turn off the vacuum and wait 1 second (hold the brick)
     script += ur.set_digital_out(IO,False)
-    script += ur.sleep(1)
-    
+    script += ur.sleep(sleep_time)
+ 
     # add to the path: go back to the safe plane
     script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
     planes.append(safe_plane)
@@ -102,13 +103,13 @@ def send(script):
 
 
 #location of a pick up station
-axisangle = Frame.from_axis_angle_vector([677.92,-886.22,-492.38],[3.902,3.225,-1.960])
-rhinoplane = frame_to_rhino(axisangle)
+axisangle = Frame.from_axis_angle_vector([3.249,1.999,-3.591],[677.46,-886.44,-492.82])
 
 pickup_planes = []
 
-for plan in  picking_planes:
-    plan.Transform.PlaneToPlane(pickup_planes[0], plan)
+for plan in  picking_plans:
+    x = rg.Transform.PlaneToPlane(picking_plans[0], plan)
+    plan.Transform(x)
     pickup_planes.append(rg.Plane(plan))
 
 # print rhinoplane
@@ -145,6 +146,4 @@ for i in range(len(robot_planes)):
 
 if fabricate:
     send(script)
-
-
 
