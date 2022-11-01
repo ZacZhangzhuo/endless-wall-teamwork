@@ -17,14 +17,14 @@ IO = 0 # 0
 sleep_time = 0.2
 
 def tcp(script):
-    script += ur.set_tcp_by_angles(-0.35, 0.5, 89.08, m.radians(0.0), m.radians(180.0),m.radians(0.0))
+    script += ur.set_tcp_by_angles(-0.35, 0.5, 89.08, m.radians(0.0), m.radians(0.0),m.radians(0.0))
     
     return script
 
 def set_robot_base():
     pt_0 = rg.Point3d(-200 ,-320 ,-587.3) # base plane origin
     pt_1 = rg.Point3d(-206.2 ,-192.6 ,-587.3) # point on positive x axis
-    pt_2 = rg.Point3d(456.4 ,-326.4 ,-587.3 ) # point on positive xy plane
+    pt_2 = rg.Point3d(456.4 ,-326.4 ,-587.3) # point on positive xy plane
     robot_base = rg.Plane(pt_0,pt_1-pt_0,pt_2-pt_0)
     return robot_base
 
