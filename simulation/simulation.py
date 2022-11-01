@@ -116,3 +116,10 @@ for i in range(len(brick_planes)):
 #! Never touch
 if fabricate:
     send(script)
+
+
+
+# Questions to ask:
+# Visualize gcode in GH
+# Robot position in GH
+# TCP
