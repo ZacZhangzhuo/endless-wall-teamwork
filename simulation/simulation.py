@@ -22,9 +22,9 @@ def tcp(script):
     return script
 
 def set_robot_base():
-    pt_0 = rg.Point3d(-249.62,-750.86,-587.98) # base plane origin
-    pt_1 = rg.Point3d(-252.73,-1064.50,-587.82) # point on positive x axis
-    pt_2 = rg.Point3d(826.13,-752.45,-587.91) # point on positive xy plane
+    pt_0 = rg.Point3d(-200 ,-320 ,-587.3) # base plane origin
+    pt_1 = rg.Point3d(-206.2 ,-192.6 ,-587.3) # point on positive x axis
+    pt_2 = rg.Point3d(456.4 ,-326.4 ,-587.3 ) # point on positive xy plane
     robot_base = rg.Plane(pt_0,pt_1-pt_0,pt_2-pt_0)
     return robot_base
 
@@ -96,7 +96,7 @@ script = tcp(script)
 
 #! ---------------------------------------------------------------- Test and navigation only: go to a point 
 test_plane = debug_plane.Clone()
-script += ur.move_j(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
 #! ----------------------------------------------------------------
 
 """
