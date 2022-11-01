@@ -17,14 +17,14 @@ IO = 0 # 0
 sleep_time = 0.2
 
 def tcp(script):
-    script += ur.set_tcp_by_angles(0.0, 0.0, 80.0, m.radians(0.0), m.radians(180.0),m.radians(0.0))
+    script += ur.set_tcp_by_angles(-0.35, 0.5, 89.08, m.radians(0.0), m.radians(180.0),m.radians(0.0))
     
     return script
 
 def set_robot_base():
-    pt_0 = rg.Point3d(-249.62,-750.86,-587.98) # base plane origin
-    pt_1 = rg.Point3d(-252.73,-1064.50,-587.82) # point on positive x axis
-    pt_2 = rg.Point3d(826.13,-752.45,-587.91) # point on positive xy plane
+    pt_0 = rg.Point3d(-200 ,-320 ,-587.3) # base plane origin
+    pt_1 = rg.Point3d(-206.2 ,-192.6 ,-587.3) # point on positive x axis
+    pt_2 = rg.Point3d(456.4 ,-326.4 ,-587.3 ) # point on positive xy plane
     robot_base = rg.Plane(pt_0,pt_1-pt_0,pt_2-pt_0)
     return robot_base
 
@@ -99,7 +99,7 @@ test_plane = debug_plane.Clone()
 script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
 #! ----------------------------------------------------------------
 
-
+"""
 #!  ---------------------------------------------------------------- Real run
 #Optional: location of a pick up station
 # pick_point = Frame.from_axis_angle_vector([2.403,2.421,-4.166],[677.46,-886.44,-492.82])
@@ -108,7 +108,7 @@ for i in range(len(brick_planes)):
     script, p = pickup_brick(script,picking_planes[i%len(picking_planes)])
     script, p = place_brick(script,robot_planes[i])
 #!  ---------------------------------------------------------------- 
-
+"""
 #! Never touch
 if fabricate:
     send(script)
