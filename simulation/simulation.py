@@ -12,7 +12,7 @@ from compas_rhino.conversions import frame_to_rhino
 # change these values if needed
 # ROBOT_IP = "192.168.10.10"
 SAFE_ROBOT_ACC = 0.1
-SAFE_ROBOT_VEL = 0.3
+SAFE_ROBOT_VEL = 0.1
 IO = 0 # 0
 sleep_time = 0.2
 
@@ -29,14 +29,12 @@ def set_robot_base():
     robot_base = rg.Plane(pt_0,pt_1-pt_0,pt_2-pt_0)
     return robot_base
 
-
 def rhino_to_robot_space(rhino_plane):
     plane = rhino_plane.Clone()
     robot_base_plane = set_robot_base()
     rhino_matrix = rg.Transform.PlaneToPlane(rg.Plane.WorldXY,robot_base_plane)
     plane.Transform(rhino_matrix)
     return plane
-
 
 def pickup_brick(script,pick_up_plane):
     planes = []
@@ -64,7 +62,6 @@ def pickup_brick(script,pick_up_plane):
     planes.append(safe_plane)
     return script, planes
 
-
 def place_brick(script, place_plane):
     
     planes = []
@@ -84,60 +81,35 @@ def place_brick(script, place_plane):
     ## add to the path: turn off the vacuum and wait 1 second (hold the brick)
     script += ur.set_digital_out(IO,False)
     script += ur.sleep(sleep_time)
- 
     # add to the path: go back to the safe plane
     script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
     planes.append(safe_plane)
     
     return script,planes
 
-
 def send(script):
     script = c.concatenate_script(script)
     c.send_script(script, ROBOT_IP)
     return script 
 
-
-#location of a pick up station
-axisangle = Frame.from_axis_angle_vector([2.403,2.421,-4.166],[677.46,-886.44,-492.82])
-
-pickup_planes = []
-
-for plan in  picking_plans:
-    x = rg.Transform.PlaneToPlane(picking_plans[0], plan)
-    plan.Transform(x)
-    pickup_planes.append(rg.Plane(plan))
-
-
-#  picking_planes
-
-
 script = ""
-#skip this step
 script = tcp(script)
-vis_planes = []
+
+#! ---------------------------------------------------------------- Test and navigation only: go to a point 
+test_plane = debug_plane.Clone()
+script += ur.move_j(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+#! ----------------------------------------------------------------
 
 
+#!  ---------------------------------------------------------------- Real run
+#Optional: location of a pick up station
+pick_point = Frame.from_axis_angle_vector([2.403,2.421,-4.166],[677.46,-886.44,-492.82])
 
-# translate from rhino to robot_space and iterate through all planes
-robot_planes = []
-
-for p in brick_planes:
-    r_plane = rhino_to_robot_space(p)
-    robot_planes.append(r_plane)
-
-
-for i in range(len(robot_planes)):
-    
-    script, p = pickup_brick(script,picking_plans[0])
-    vis_planes.extend(p) #only to visualize the planes
-    
+for i in range(len(brick_planes)) :
+    script, p = pickup_brick(script,picking_planes[i%len(picking_planes)])
     script, p = place_brick(script,robot_planes[i])
-    vis_planes.extend(p)
+#!  ---------------------------------------------------------------- 
 
-
+#! Never touch
 if fabricate:
     send(script)
-
-
-
