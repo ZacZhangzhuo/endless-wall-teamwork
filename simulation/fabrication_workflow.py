@@ -10,7 +10,7 @@ from compas_rhino.conversions import frame_to_rhino
 
 
 # change these values if needed
-ROBOT_IP = "192.168.10.10"
+# ROBOT_IP = "192.168.10.10"
 SAFE_ROBOT_ACC = 0.1
 SAFE_ROBOT_VEL = 0.3
 IO = 0 # 0
@@ -102,15 +102,11 @@ def send(script):
 axisangle = Frame.from_axis_angle_vector([2.403,2.421,-4.166],[677.46,-886.44,-492.82])
 
 pickup_planes = []
-"""
+
 for plan in  picking_plans:
     x = rg.Transform.PlaneToPlane(picking_plans[0], plan)
     plan.Transform(x)
     pickup_planes.append(rg.Plane(plan))
-"""
-# print rhinoplane
-# pick_station = rg.Plane(rhinoplane)#Rotate Plane
-
 
 
 #  picking_planes
