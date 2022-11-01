@@ -102,7 +102,7 @@ script += ur.move_j(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT
 
 #!  ---------------------------------------------------------------- Real run
 #Optional: location of a pick up station
-pick_point = Frame.from_axis_angle_vector([2.403,2.421,-4.166],[677.46,-886.44,-492.82])
+# pick_point = Frame.from_axis_angle_vector([2.403,2.421,-4.166],[677.46,-886.44,-492.82])
 
 for i in range(len(brick_planes)):
     script, p = pickup_brick(script,picking_planes[i%len(picking_planes)])
