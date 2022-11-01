@@ -123,3 +123,5 @@ robot_base_plane = set_robot_base()
 # Visualize gcode in GH
 # Robot position in GH
 # TCP
+# import compas
+# pose = compas.geometry.Frame([pose[3],pose[4],pose[5]],[pose[0],pose[1],pose[2]])
