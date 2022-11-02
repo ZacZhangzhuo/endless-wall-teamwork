@@ -110,7 +110,7 @@ script = tcp(script)
 
 for i in range(len(brick_planes)):
     script, p = pickup_brick(script,picking_planes[i%len(picking_planes)])
-    script, p = place_brick(script,robot_planes[i])
+    script, p = place_brick(script,brick_planes[i])
 #!  ---------------------------------------------------------------- 
 
 #! Never touch
