@@ -99,8 +99,8 @@ script = ""
 script = tcp(script)
 
 #! ---------------------------------------------------------------- Test and navigation only: go to a point 
-test_plane = debug_plane.Clone()
-script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+# test_plane = debug_plane.Clone()
+# script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
 #! ----------------------------------------------------------------
 
 
@@ -108,9 +108,9 @@ script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT
 #Optional: location of a pick up station
 # pick_point = Frame.from_axis_angle_vector([2.403,2.421,-4.166],[677.46,-886.44,-492.82])
 
-# for i in range(len(brick_planes)):
-    # script, p = pickup_brick(script,picking_planes[i%len(picking_planes)])
-    # script, p = place_brick(script,robot_planes[i])
+for i in range(len(brick_planes)):
+    script, p = pickup_brick(script,picking_planes[i%len(picking_planes)])
+    script, p = place_brick(script,robot_planes[i])
 #!  ---------------------------------------------------------------- 
 
 #! Never touch
