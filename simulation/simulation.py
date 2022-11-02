@@ -11,8 +11,8 @@ from compas_rhino.conversions import frame_to_rhino
 
 # change these values if needed
 # ROBOT_IP = "192.168.10.10"
-SAFE_ROBOT_ACC = 0.1
-SAFE_ROBOT_VEL = 0.1
+SAFE_ROBOT_ACC = 0.6
+SAFE_ROBOT_VEL = 1.0
 IO = 0 # 0
 sleep_time = 0.2
 
@@ -109,7 +109,7 @@ script = tcp(script)
 # pick_point = Frame.from_axis_angle_vector([2.403,2.421,-4.166],[677.46,-886.44,-492.82])
 
 for i in range(len(brick_planes)):
-    script, p = pickup_brick(script,rhino_to_robot_space(picking_planes[i%len(picking_planes))])
+    script, p = pickup_brick(script,rhino_to_robot_space(picking_planes[i%len(picking_planes)]))
     script, p = place_brick(script,rhino_to_robot_space(brick_planes[i]))
 #!  ---------------------------------------------------------------- 
 
