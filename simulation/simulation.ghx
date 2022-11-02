@@ -48,10 +48,10 @@
             <chunk name="Projection">
               <items count="2">
                 <item name="Target" type_name="gh_drawing_point" type_code="30">
-                  <X>-447</X>
-                  <Y>-873</Y>
+                  <X>-1779</X>
+                  <Y>-674</Y>
                 </item>
-                <item name="Zoom" type_name="gh_single" type_code="5">0.5546323</item>
+                <item name="Zoom" type_name="gh_single" type_code="5">0.652508</item>
               </items>
             </chunk>
             <chunk name="Views">
@@ -6501,7 +6501,7 @@ robot.artist = Artist(model)</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
-                      <items count="2">
+                      <items count="3">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>3222</X>
                           <Y>1320</Y>
@@ -6512,6 +6512,7 @@ robot.artist = Artist(model)</item>
                           <X>3236</X>
                           <Y>1334</Y>
                         </item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                       </items>
                     </chunk>
                     <chunk name="ParameterData">
@@ -6532,7 +6533,7 @@ robot.artist = Artist(model)</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3251</X>
                                   <Y>1322</Y>
@@ -6543,6 +6544,7 @@ robot.artist = Artist(model)</item>
                                   <X>3268.5</X>
                                   <Y>1334</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -6713,7 +6715,7 @@ COMPAS FAB v0.27.0</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
-                      <items count="2">
+                      <items count="3">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>3341</X>
                           <Y>1322</Y>
@@ -6724,6 +6726,7 @@ COMPAS FAB v0.27.0</item>
                           <X>3482</X>
                           <Y>1424</Y>
                         </item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                       </items>
                     </chunk>
                     <chunk name="ParameterData">
@@ -6766,7 +6769,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1324</Y>
@@ -6777,6 +6780,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1334</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -6796,7 +6800,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1344</Y>
@@ -6807,6 +6811,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1354</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -6827,7 +6832,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1364</Y>
@@ -6838,6 +6843,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1374</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -6857,7 +6863,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1384</Y>
@@ -6868,6 +6874,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1394</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -6888,7 +6895,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1404</Y>
@@ -6899,6 +6906,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1414</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -6919,7 +6927,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1424</Y>
@@ -6930,6 +6938,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1434</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -6949,7 +6958,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1444</Y>
@@ -6960,6 +6969,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1454</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -6979,7 +6989,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1464</Y>
@@ -6990,6 +7000,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1474</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7010,7 +7021,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1484</Y>
@@ -7021,6 +7032,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1494</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7041,7 +7053,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3343</X>
                                   <Y>1504</Y>
@@ -7052,6 +7064,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3406.5</X>
                                   <Y>1514</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7067,7 +7080,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3497</X>
                                   <Y>1324</Y>
@@ -7078,6 +7091,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3541.5</X>
                                   <Y>1338.286</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7093,7 +7107,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3497</X>
                                   <Y>1352</Y>
@@ -7104,6 +7118,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3541.5</X>
                                   <Y>1366.857</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7119,7 +7134,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3497</X>
                                   <Y>1381</Y>
@@ -7130,6 +7145,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3541.5</X>
                                   <Y>1395.429</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7145,7 +7161,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3497</X>
                                   <Y>1409</Y>
@@ -7156,6 +7172,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3541.5</X>
                                   <Y>1424</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7171,7 +7188,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3497</X>
                                   <Y>1438</Y>
@@ -7182,6 +7199,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3541.5</X>
                                   <Y>1452.572</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7197,7 +7215,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3497</X>
                                   <Y>1466</Y>
@@ -7208,6 +7226,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3541.5</X>
                                   <Y>1481.143</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7223,7 +7242,7 @@ COMPAS FAB v0.27.0</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3497</X>
                                   <Y>1495</Y>
@@ -7234,6 +7253,7 @@ COMPAS FAB v0.27.0</item>
                                   <X>3541.5</X>
                                   <Y>1509.714</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7262,13 +7282,14 @@ COMPAS FAB v0.27.0</item>
                   </items>
                   <chunks count="1">
                     <chunk name="Attributes">
-                      <items count="1">
+                      <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>3171</X>
                           <Y>1483</Y>
                           <W>100</W>
                           <H>22</H>
                         </item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                       </items>
                     </chunk>
                   </chunks>
@@ -7293,13 +7314,14 @@ COMPAS FAB v0.27.0</item>
                   </items>
                   <chunks count="1">
                     <chunk name="Attributes">
-                      <items count="1">
+                      <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>3171</X>
                           <Y>1503</Y>
                           <W>100</W>
                           <H>22</H>
                         </item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                       </items>
                     </chunk>
                   </chunks>
@@ -7344,7 +7366,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
-                      <items count="2">
+                      <items count="3">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>3032</X>
                           <Y>1293</Y>
@@ -7355,6 +7377,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           <X>3064</X>
                           <Y>1355</Y>
                         </item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                       </items>
                     </chunk>
                     <chunk name="ParameterData">
@@ -7386,7 +7409,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3034</X>
                                   <Y>1295</Y>
@@ -7397,6 +7420,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>3043</X>
                                   <Y>1305</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7417,7 +7441,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3034</X>
                                   <Y>1315</Y>
@@ -7428,6 +7452,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>3043</X>
                                   <Y>1325</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7448,7 +7473,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3034</X>
                                   <Y>1335</Y>
@@ -7459,6 +7484,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>3043</X>
                                   <Y>1345</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7479,7 +7505,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3034</X>
                                   <Y>1355</Y>
@@ -7490,6 +7516,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>3043</X>
                                   <Y>1365</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7510,7 +7537,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3034</X>
                                   <Y>1375</Y>
@@ -7521,6 +7548,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>3043</X>
                                   <Y>1385</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7541,7 +7569,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3034</X>
                                   <Y>1395</Y>
@@ -7552,6 +7580,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>3043</X>
                                   <Y>1405</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -7567,7 +7596,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>3079</X>
                                   <Y>1295</Y>
@@ -7578,6 +7607,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>3114</X>
                                   <Y>1355</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -8087,13 +8117,14 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                   </items>
                   <chunks count="1">
                     <chunk name="Attributes">
-                      <items count="1">
+                      <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>3166</X>
                           <Y>1403</Y>
                           <W>140</W>
                           <H>22</H>
                         </item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                       </items>
                     </chunk>
                   </chunks>
@@ -8148,7 +8179,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
-                      <items count="2">
+                      <items count="3">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>2879</X>
                           <Y>1293</Y>
@@ -8159,6 +8190,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           <X>2927</X>
                           <Y>1355</Y>
                         </item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                       </items>
                     </chunk>
                     <chunk name="ParameterData">
@@ -8189,7 +8221,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>2881</X>
                                   <Y>1295</Y>
@@ -8200,6 +8232,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>2898</X>
                                   <Y>1315</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -8215,7 +8248,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="2">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>2881</X>
                                   <Y>1335</Y>
@@ -8226,6 +8259,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>2898</X>
                                   <Y>1355</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                             <chunk name="PersistentData">
@@ -8261,7 +8295,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="2">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>2881</X>
                                   <Y>1375</Y>
@@ -8272,6 +8306,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>2898</X>
                                   <Y>1395</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                             <chunk name="PersistentData">
@@ -8308,7 +8343,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>2942</X>
                                   <Y>1295</Y>
@@ -8319,6 +8354,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>2952.5</X>
                                   <Y>1305</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -8335,7 +8371,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>2942</X>
                                   <Y>1315</Y>
@@ -8346,6 +8382,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>2952.5</X>
                                   <Y>1325</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -8362,7 +8399,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>2942</X>
                                   <Y>1335</Y>
@@ -8373,6 +8410,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>2952.5</X>
                                   <Y>1345</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -8389,7 +8427,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>2942</X>
                                   <Y>1355</Y>
@@ -8400,6 +8438,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>2952.5</X>
                                   <Y>1365</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -8416,7 +8455,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>2942</X>
                                   <Y>1375</Y>
@@ -8427,6 +8466,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>2952.5</X>
                                   <Y>1385</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -8443,7 +8483,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           </items>
                           <chunks count="1">
                             <chunk name="Attributes">
-                              <items count="2">
+                              <items count="3">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                                   <X>2942</X>
                                   <Y>1395</Y>
@@ -8454,6 +8494,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                                   <X>2952.5</X>
                                   <Y>1405</Y>
                                 </item>
+                                <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                               </items>
                             </chunk>
                           </chunks>
@@ -8480,7 +8521,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                   </items>
                   <chunks count="3">
                     <chunk name="Attributes">
-                      <items count="2">
+                      <items count="3">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>2697</X>
                           <Y>1301</Y>
@@ -8491,6 +8532,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                           <X>2757</X>
                           <Y>1315</Y>
                         </item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                       </items>
                     </chunk>
                     <chunk name="param_input" index="0">
@@ -8505,7 +8547,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                       </items>
                       <chunks count="1">
                         <chunk name="Attributes">
-                          <items count="2">
+                          <items count="3">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2699</X>
                               <Y>1303</Y>
@@ -8516,6 +8558,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                               <X>2722</X>
                               <Y>1315</Y>
                             </item>
+                            <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                           </items>
                         </chunk>
                       </chunks>
@@ -8531,7 +8574,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                       </items>
                       <chunks count="1">
                         <chunk name="Attributes">
-                          <items count="2">
+                          <items count="3">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2772</X>
                               <Y>1303</Y>
@@ -8542,6 +8585,7 @@ configuration = Configuration.from_revolute_values([x,y,z,u,v,w])</item>
                               <X>2795</X>
                               <Y>1315</Y>
                             </item>
+                            <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                           </items>
                         </chunk>
                       </chunks>
@@ -10663,7 +10707,7 @@ x = rg.Transform.PlaneToPlane(robot_base_plane, rg.Plane.WorldXY)
     <chunk name="Thumbnail">
       <items count="1">
         <item name="Thumbnail" type_name="gh_drawing_bitmap" type_code="37">
-          <bitmap length="2152">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</bitmap>
+          <bitmap length="4714">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</bitmap>
         </item>
       </items>
     </chunk>
