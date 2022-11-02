@@ -5570,8 +5570,9 @@ if stop_teach_mode:
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="5">
                     <item name="Description" type_name="gh_string" type_code="10">Construct a plane from an origin point and {x}, {y} axes.</item>
+                    <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">b3dbf06f-4752-44a6-bf11-6be48e367297</item>
                     <item name="Name" type_name="gh_string" type_code="10">Construct Plane</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Construct Plane</item>
@@ -6078,8 +6079,9 @@ path = (a[::-1].replace('xhg.'+b[::-1].replace('*','',1),'',1))[::-1]+file_name<
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="5">
                     <item name="Description" type_name="gh_string" type_code="10">Construct a point from {xyz} coordinates.</item>
+                    <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">d76ee5ad-16d6-4f4e-a94f-ed2f8eadf130</item>
                     <item name="Name" type_name="gh_string" type_code="10">Construct Point</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Pt</item>
@@ -7386,7 +7388,7 @@ robot.artist = Artist(model)</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="15">
+                  <items count="14">
                     <item name="CodeInput" type_name="gh_string" type_code="10">"""
 Visualizes the robot.
 
@@ -7522,7 +7524,6 @@ COMPAS FAB v0.27.0</item>
                       <W>1654</W>
                       <H>812</H>
                     </item>
-                    <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="HideInput" type_name="gh_bool" type_code="1">true</item>
                     <item name="HideOutput" type_name="gh_bool" type_code="1">true</item>
                     <item name="IconDisplay" type_name="gh_int32" type_code="3">2</item>
@@ -18966,8 +18967,8 @@ if button:
                           <H>64</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>3221</X>
-                          <Y>2439</Y>
+                          <X>3139</X>
+                          <Y>2404</Y>
                         </item>
                       </items>
                     </chunk>
@@ -19175,8 +19176,9 @@ if button:
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="6">
+                  <items count="7">
                     <item name="Description" type_name="gh_string" type_code="10">Contains a collection of generic geometry</item>
+                    <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">73b37992-31fa-4e3b-9498-e832e334e63d</item>
                     <item name="Name" type_name="gh_string" type_code="10">Geometry</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Geometry</item>
