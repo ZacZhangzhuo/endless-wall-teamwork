@@ -99,8 +99,8 @@ script = ""
 script = tcp(script)
 
 #! ---------------------------------------------------------------- Test and navigation only: go to a point 
-# test_plane = debug_plane.Clone()
-# script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+#test_plane = debug_plane.Clone()
+#script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
 #! ----------------------------------------------------------------
 
 
