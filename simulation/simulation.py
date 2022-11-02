@@ -109,8 +109,8 @@ script = tcp(script)
 # pick_point = Frame.from_axis_angle_vector([2.403,2.421,-4.166],[677.46,-886.44,-492.82])
 
 for i in range(len(brick_planes)):
-    script, p = pickup_brick(script,picking_planes[i%len(picking_planes)])
-    script, p = place_brick(script,brick_planes[i])
+    script, p = pickup_brick(script,rhino_to_robot_space(picking_planes[i%len(picking_planes))])
+    script, p = place_brick(script,rhino_to_robot_space(brick_planes[i]))
 #!  ---------------------------------------------------------------- 
 
 #! Never touch
