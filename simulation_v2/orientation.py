@@ -1,8 +1,5 @@
 
-
 import Rhino.Geometry as rg
-import math
-from copy import deepcopy
 scale = rg.Transform.Scale(rg.Plane.WorldXY, 1000,1000,1000)
 for v in visual:
     v.Transform(scale)
