@@ -1,11 +1,9 @@
 from imp import reload
 import Rhino.Geometry as rg
 import simple_ur_script as ur
-
-reload(ur)
+# reload(ur)
 import simple_comm as c
-
-reload(c)
+# reload(c)
 
 
 def tcp(script):
