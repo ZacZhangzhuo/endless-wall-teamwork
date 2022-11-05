@@ -2,8 +2,6 @@
 import Rhino.Geometry as rg
 import math
 import compas.geometry as geom
-import compas_rhino
-import copy
 # import 
 scale = rg.Transform.Scale(rg.Plane.WorldXY, 1000,1000,1000)
 for v in visual:
