@@ -1,4 +1,4 @@
-
+import simple_comm as comm
 import Rhino.Geometry as rg
 import math
 import compas.geometry as geom
