@@ -1,0 +1,106 @@
+from imp import reload
+import Rhino.Geometry as rg
+import simple_ur_script as ur
+# reload(ur)
+import simple_comm as c
+# reload(c)
+
+
+def tcp(script):
+    script += ur.set_tcp_by_angles(TCP[0], TCP[1], TCP[2], TCP[3], TCP[4], TCP[5])
+    return script
+
+
+def set_robot_base():
+    pt_0 = TABLE_NAVIGATION_POINTS[0]  # base plane origin
+    pt_1 = TABLE_NAVIGATION_POINTS[1]
+    pt_2 = TABLE_NAVIGATION_POINTS[2]
+    robot_base = rg.Plane(pt_0, pt_1 - pt_0, pt_2 - pt_0)
+    return robot_base
+
+
+def rhino_to_robot_space(rhino_plane):
+    plane = rhino_plane.Clone()
+    robot_base_plane = set_robot_base()
+    rhino_matrix = rg.Transform.PlaneToPlane(rg.Plane.WorldXY, robot_base_plane)
+    plane.Transform(rhino_matrix)
+    return plane
+
+
+def pickup_brick(script, pick_up_plane):
+    planes = []
+    # change the distance if needed
+    SAFE_DIST = 150
+
+    safe_plane = pick_up_plane.Clone()
+    safe_plane.Translate(rg.Vector3d.ZAxis * SAFE_DIST)
+
+    ## add to the path: go to the safe plane
+    script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+    planes.append(safe_plane)
+
+    ## add to the path: go to the pick up plane
+    script += ur.move_l(pick_up_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+    planes.append(pick_up_plane)
+
+    ## add to the path: turn on the vacuum and wait 1 sec.
+    script += ur.set_digital_out(IO, True)
+    script += ur.sleep(SAFE_SLEEP_TIME)
+
+    # add to the path: go back to the safe_plane
+    script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+    planes.append(safe_plane)
+    return script, planes
+
+
+def place_brick(script, place_plane):
+
+    planes = []
+
+    safe_plane = place_plane.Clone()
+    safe_plane.Translate(rg.Vector3d.ZAxis * SAFE_DIST)
+
+    # add to the path: go to the safe plane
+    script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+    planes.append(safe_plane)
+
+    # add to the path: go to the place plane
+    script += ur.move_l(place_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+    planes.append(place_plane)
+
+    ## add to the path: turn off the vacuum and wait 1 second (hold the brick)
+    script += ur.set_digital_out(IO, False)
+    script += ur.sleep(SAFE_SLEEP_TIME)
+    # add to the path: go back to the safe plane
+    script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+    planes.append(safe_plane)
+
+    return script, planes
+
+
+def send(script):
+    script = c.concatenate_script(script)
+    c.send_script(script, ROBOT_IP)
+    return script
+
+
+script = ""
+script = tcp(script)
+
+if is_debug_mode:
+    test_plane = debug_plane.Clone()
+    script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+
+else:
+    for i in range(len(brick_planes)):
+        script, p = pickup_brick(
+            script, rhino_to_robot_space(picking_planes[i % len(picking_planes)])
+        )
+        script, p = place_brick(script, rhino_to_robot_space(brick_planes[i]))
+        # Zac: add to the path: go to the stop plane
+        test_plane = stop_plane.Clone()
+        script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+
+
+if fabricate:
+    send(script)
