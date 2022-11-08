@@ -77,29 +77,43 @@ def place_brick(script, place_plane):
 
     return script, planes
 
+test_plane = debug_plane.Clone()
+the_stop_plane = stop_plane.Clone()
+
 
 def send(script):
     script = c.concatenate_script(script)
     c.send_script(script, ROBOT_IP)
     return script
 
+if count == None: count = 0
 
 script = ""
 script = tcp(script)
 
 if is_debug_mode:
-    test_plane = debug_plane.Clone()
     script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
 
 else:
-    for i in range(len(brick_planes)):
+    if count < len(brick_planes):
         script, p = pickup_brick(
-            script, rhino_to_robot_space(picking_planes[i % len(picking_planes)])
+            script, rhino_to_robot_space(picking_planes[count % len(picking_planes)])
         )
-        script, p = place_brick(script, rhino_to_robot_space(brick_planes[i]))
-        # Zac: add to the path: go to the stop plane
-        test_plane = stop_plane.Clone()
-        script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+        script, p = place_brick(script, rhino_to_robot_space(brick_planes[count]))
+        script += ur.move_l(rhino_to_robot_space(the_stop_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+        
+    else:
+        if len(continuous_picking_planes) == 0 or len(continuous_brick_planes) ==0:
+            pass
+        else:
+            count = count -  len(brick_planes)
+            
+            script, p = pickup_brick(
+                script, rhino_to_robot_space(picking_planes[count % len(continuous_picking_planes)])
+            )
+            script, p = place_brick(script, rhino_to_robot_space(picking_planes[count% len(continuous_brick_planes)]))
+            # Zac: add to the path: go to the stop plane
+            script += ur.move_l(rhino_to_robot_space(the_stop_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
 
 
 if fabricate:
