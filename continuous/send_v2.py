@@ -5,7 +5,6 @@ import simple_ur_script as ur
 import simple_comm as c
 # reload(c)
 
-
 def tcp(script):
     script += ur.set_tcp_by_angles(TCP[0], TCP[1], TCP[2], TCP[3], TCP[4], TCP[5])
     return script
