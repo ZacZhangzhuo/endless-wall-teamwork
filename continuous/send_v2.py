@@ -78,8 +78,8 @@ def place_brick(script, place_plane):
     return script, planes
 
 test_plane = debug_plane.Clone()
-the_stop_plane = stop_plane.Clone()
-
+# the_stop_plane = stop_plane.Clone()
+# stop_configurations.reverse()
 
 def send(script):
     script = c.concatenate_script(script)
@@ -93,6 +93,7 @@ script = tcp(script)
 
 if is_debug_mode:
     script += ur.move_l(rhino_to_robot_space(test_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+    
 
 else:
     if count < len(brick_planes):
@@ -100,7 +101,8 @@ else:
             script, rhino_to_robot_space(picking_planes[count % len(picking_planes)])
         )
         script, p = place_brick(script, rhino_to_robot_space(brick_planes[count]))
-        script += ur.move_l(rhino_to_robot_space(the_stop_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+        # script += ur.move_l(rhino_to_robot_space(the_stop_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+        script += ur.move_j(stop_configurations, SAFE_ROBOT_ACC*5, SAFE_ROBOT_VEL*5)
         
     else:
         if len(continuous_picking_planes) == 0 or len(continuous_brick_planes) ==0:
@@ -109,11 +111,13 @@ else:
             count = count -  len(brick_planes)
             
             script, p = pickup_brick(
-                script, rhino_to_robot_space(picking_planes[count % len(continuous_picking_planes)])
+                script, rhino_to_robot_space(continuous_picking_planes[count % len(continuous_picking_planes)])
             )
-            script, p = place_brick(script, rhino_to_robot_space(picking_planes[count% len(continuous_brick_planes)]))
+            script, p = place_brick(script, rhino_to_robot_space(continuous_brick_planes[count% len(continuous_brick_planes)]))
             # Zac: add to the path: go to the stop plane
-            script += ur.move_l(rhino_to_robot_space(the_stop_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+            # script += ur.move_l(rhino_to_robot_space(the_stop_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+            script += ur.move_j(stop_configurations, SAFE_ROBOT_ACC*3, SAFE_ROBOT_VEL*3)
+            
 
 
 if fabricate:
