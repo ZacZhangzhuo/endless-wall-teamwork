@@ -1,6 +1,5 @@
 import socket
 from struct import *
-import math as m
 
 def concatenate_script(list_ur_commands):
     """
@@ -73,6 +72,7 @@ def listen_to_robot(robot_ip):
     chunks["forces"] = []
     chunks["pose"] = []
     chunks["time"] = [0]
+    chunks["di"] =[]
 
     data = read(HOST, PORT)
     get_messages(data, chunks)
@@ -95,7 +95,7 @@ def read(HOST, PORT):
         traceback.print_exc()
         print "Cannot connect to ",HOST,PORT
     s.settimeout(None)
-    data = s.recv(1024)
+    data = s.recv(2048)
     s.close()
     return data
 
@@ -119,6 +119,7 @@ def get_messages(bytes, chunks_info):
     tcp_force = bytes[540:588]
     tool_vector = bytes[588:636]
     controller_time = bytes[740:748]
+    digital_output = bytes[1044:1052]
 
     # format type: int,
     fmt_double6 = "!dddddd"
@@ -126,12 +127,14 @@ def get_messages(bytes, chunks_info):
 
     #Unpack selected data
     target_joints = unpack(fmt_double6,q_target)
-    chunks_info["target_joints"]= (m.degrees(j) for j in target_joints)
+    chunks_info["target_joints"]= (math.degrees(j) for j in target_joints)
     actual_joints = unpack(fmt_double6,q_actual)
-    chunks_info["actual_joints"]= (m.degrees(j) for j in actual_joints)
+    chunks_info["actual_joints"]= (math.degrees(j) for j in actual_joints)
     forces = unpack(fmt_double6,tcp_force)
     chunks_info["forces"]= forces
     pose = unpack(fmt_double6,tool_vector)
     chunks_info["pose"]= pose
     time = unpack(fmt_double1,controller_time)
     chunks_info["time"]= time
+    digital_output = unpack(fmt_double1,digital_output)
+    chunks_info["di"] = digital_output
