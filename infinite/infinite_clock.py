@@ -1,7 +1,5 @@
-import json
-import compas_rhino.conversions as cv
-import compas.geometry as cg
 
+from copy import deepcopy
 def getZ (Plane):
     return Plane.Origin.Z
 
@@ -9,17 +7,18 @@ Count = 10
 Tolerance = 0.01
 
 
-# dataDict = {}
-if read:
-    with open(path, "r") as f:
-        dataDict = json.load(f)
+# # dataDict = {}
+# if read:
+#     with open(path, "r") as f:
+#         dataDict = json.load(f)
 
-initPlanes = []
-targetPlanes = []
-for i in dataDict[str(count%Count)]:
-    initPlanes.append(cv.plane_to_rhino(cg.Plane.from_jsonstring(i)))
-for i in dataDict[str((count+1)%Count)]:
-    targetPlanes.append(cv.plane_to_rhino(cg.Plane.from_jsonstring(i))) 
+initPlanes =  list(data.Branch(count%10))
+targetPlanes = list(data.Branch((count+1)%10))
+    
+# for i in dataDict[str(count%Count)]:
+#     initPlanes.append(cv.plane_to_rhino(cg.Plane.from_jsonstring(i)))
+# for i in dataDict[str((count+1)%Count)]:
+#     targetPlanes.append(cv.plane_to_rhino(cg.Plane.from_jsonstring(i))) 
 
 iterations = 0
 
@@ -37,8 +36,8 @@ for n, p in enumerate(initPlanes):
             break
     if temp == True: removePlanes.append(p)
 
-removePlanes.sort(key=getZ)
-targetPlanes.sort(key=getZ)
+removePlanes.sort(key=getZ, reverse= True)
+targetPlanes.sort(key=getZ, reverse= False)
 
 
 print (iterations)
@@ -46,5 +45,5 @@ print (iterations)
 outTemp = keepPlanes
 
 
-initVisual = removePlanes
+initVisual = initPlanes
 targetVisual = targetPlanes
