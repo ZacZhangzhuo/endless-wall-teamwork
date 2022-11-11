@@ -29,7 +29,6 @@ def rhino_to_robot_space(rhino_plane):
 def pickup_brick(script, pick_up_plane):
     planes = []
     # change the distance if needed
-    SAFE_DIST = 150
 
     safe_plane = pick_up_plane.Clone()
     safe_plane.Translate(rg.Vector3d.ZAxis * SAFE_DIST)
@@ -49,6 +48,20 @@ def pickup_brick(script, pick_up_plane):
     # add to the path: go back to the safe_plane
     script += ur.move_l(safe_plane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
     planes.append(safe_plane)
+    return script, planes
+
+def glue(script, gluePlane):
+    planes = []
+    safeGluePlane = gluePlane.Clone()
+    safeGluePlane.Translate(rg.Vector3d.ZAxis * SAFE_DIST)
+    
+    script += ur.move_l(safeGluePlane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+    planes.append(safeGluePlane) 
+    script += ur.move_l(gluePlane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL) 
+    planes.append(gluePlane) 
+    script += ur.sleep(SAFE_SLEEP_TIME)
+    script += ur.move_l(safeGluePlane, SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
+    planes.append(safeGluePlane) 
     return script, planes
 
 
@@ -99,6 +112,7 @@ else:
         script, p = pickup_brick(
             script, rhino_to_robot_space(picking_planes[count % len(picking_planes)])
         )
+        script, p = glue( script, rhino_to_robot_space(gluePlane))
         script, p = place_brick(script, rhino_to_robot_space(brick_planes[count]))
         # script += ur.move_l(rhino_to_robot_space(the_stop_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
         script += ur.move_j(stop_configurations, SAFE_ROBOT_ACC*5, SAFE_ROBOT_VEL*5)
@@ -108,16 +122,16 @@ else:
             pass
         else:
             count = count -  len(brick_planes)
-            
+
             script, p = pickup_brick(
                 script, rhino_to_robot_space(continuous_picking_planes[count % len(continuous_picking_planes)])
             )
+            script, p = glue( script, rhino_to_robot_space(gluePlane))
             script, p = place_brick(script, rhino_to_robot_space(continuous_brick_planes[count% len(continuous_brick_planes)]))
             # Zac: add to the path: go to the stop plane
             # script += ur.move_l(rhino_to_robot_space(the_stop_plane), SAFE_ROBOT_ACC, SAFE_ROBOT_VEL)
             script += ur.move_j(stop_configurations, SAFE_ROBOT_ACC*3, SAFE_ROBOT_VEL*3)
             
-
 
 if fabricate:
     send(script)
