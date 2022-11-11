@@ -19,7 +19,7 @@ for tx in xx:
     for n, d in enumerate(distance):
         if d == tx:
             x[n].Transform(
-                rg.Transform.Rotation(temp * math.pi/90, x[n].ZAxis, x[n].Origin)
+                rg.Transform.Rotation(temp * math.pi/36, x[n].ZAxis, x[n].Origin)
             )  # angleRadians: float, rotationAxis: Vector3d, rotationCenter: Point3d
     temp = -temp
 
