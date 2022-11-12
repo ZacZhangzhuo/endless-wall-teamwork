@@ -22,11 +22,6 @@ for count in range(Count):
     initPlanes = list(data.Branch((count) % Count))[:listLength]
     theTargetPlanes = list(data.Branch((count + 1) % Count))[:listLength]
 
-    # for i in dataDict[str(count%Count)]:
-    #     initPlanes.append(cv.plane_to_rhino(cg.Plane.from_jsonstring(i)))
-    # for i in dataDict[str((count+1)%Count)]:
-    #     theTargetPlanes.append(cv.plane_to_rhino(cg.Plane.from_jsonstring(i)))
-
     iterations = 0
 
     keepPlanes = []
@@ -46,5 +41,6 @@ for count in range(Count):
 
     theRemovePlanes.sort(key=getZ, reverse=True)
     theTargetPlanes.sort(key=getZ, reverse=False)
+    
     RemovePlanes.extend(theRemovePlanes)
     TargetPlanes.extend(theTargetPlanes)
