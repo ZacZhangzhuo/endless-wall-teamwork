@@ -3,7 +3,7 @@ import scriptcontext as rs
 
 fabricate = run
 
-
+if x: rs.sticky["count"] -=1
 if reset:
     rs.sticky["count"] = 0
 
